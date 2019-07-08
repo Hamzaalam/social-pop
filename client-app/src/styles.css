@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+/*Login and signup page*/
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+    margin-left: 22%;
+    margin-top: 5%;
+    height: calc(2em + 1rem + 2px);
+    width: 50%;
+}
+.btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.form{
+    margin-top: 10%;
+}
+
+h3{
+    text-align: center;
+    color: #fff;
+    font-style: oblique;
+}
+.form-control {
+    height: calc(2em + 1rem + 4px); 
+}
+button[type=submit]:disabled{
+    background-color: #f5f6f6;
+    color: #a09e9e;
+    cursor:not-allowed;
+  }
+input[type=text].invalid-textbox,input[type=password].invalid-textbox{
+    border-bottom: 2px solid #ed5558;
+}
+input.ng-invalid.ng-dirty{
+    border: 2px solid #ed5558;
+}
+
+label.validation-message{
+    color:#ed5558;
+    margin-bottom: -3px;
+}

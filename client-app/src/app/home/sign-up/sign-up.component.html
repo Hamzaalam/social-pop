@@ -1,21 +1,21 @@
 <h3>Sign up panel</h3>
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)" class="form">
     <div  class="form-group">
-         <input required #name="ngModel" [(ngModel)]="userService.selectedUser.name"
+         <input required #name="ngModel" [(ngModel)]="userService.userModel.name"
                 name="name" type="text" class="form-control" placeholder="Name"/>
          <div *ngIf=" signUpForm.submitted && !name.valid">
                 <label class="validation-message">This field is required.</label>
          </div>   
     </div>
     <div class="form-group">
-        <input required #phone="ngModel" [(ngModel)]="userService.selectedUser.phone"
+        <input required #phone="ngModel" [(ngModel)]="userService.userModel.phone"
                name="phone" type="text" class="form-control" placeholder="Phone" />
         <div *ngIf=" signUpForm.submitted && !phone.valid">
                <label class="validation-message">This field is required.</label>
         </div>   
     </div>
     <div class="form-group">
-        <input required [pattern]='emailRegex' #email="ngModel" [(ngModel)]="userService.selectedUser.email"
+        <input required [pattern]='emailRegex' #email="ngModel" [(ngModel)]="userService.userModel.email"
                name="email" type="text" class="form-control" placeholder="Your Email *"/>
         <div *ngIf="signUpForm.submitted && email.errors">
                 <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
@@ -23,7 +23,7 @@
         </div>   
     </div>
     <div class="form-group">
-        <input required #password="ngModel" [(ngModel)]="userService.selectedUser.password"
+        <input required #password="ngModel" [(ngModel)]="userService.userModel.password"
                name="password" type="password" class="form-control" placeholder="Your Password *" />
                <div *ngIf=" signUpForm.submitted && !name.valid">
                     <label class="validation-message">This field is required.</label>

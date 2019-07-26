@@ -1,0 +1,13 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: none;
+    margin: auto;
+    text-align: center;
+    margin-top:1%;
+    width: 1000px;
+
+  }
+tr:hover {
+    background-color:grey;
+}
+  

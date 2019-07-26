@@ -1,16 +1,24 @@
     <h3>Login panel</h3>
-        <form class="form">
+        <form #loginForm="ngForm" (submit)="onSubmit(form)" class="form">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                <input required [pattern]='emailRegex' #email="ngModel" [(ngModel)]="userService.userModel.email"
+                       name="email" type="text" class="form-control" placeholder="Your Email *"/>
+                <div *ngIf="loginForm.submitted && email.errors">
+                        <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+                        <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+                </div>   
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                <input required #password="ngModel" [(ngModel)]="userService.userModel.password"
+                       name="password" type="password" class="form-control" placeholder="Your Password *" />
+                       <div *ngIf=" loginForm.submitted && !password.valid">
+                            <label class="validation-message">This field is required.</label>
+                     </div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btnSubmit">login </button>    
             </div>
             <div class="form-group">
-
                 <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
             </div>
         </form>

@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.resetForm();
+    this.resetForm();
   }
   resetForm(form?: NgForm) {
     if (form != null)
@@ -29,14 +29,17 @@ export class SignUpComponent implements OnInit {
   onSubmit(form: NgForm){
     this.userService.registerUser(this.userService.userModel).subscribe(
       (res:any) =>{
-        if(res.Suceeded){
+        if(res.Succeeded){
+          console.log("succeeded"+res);
           console.log("Registration successfully!!!")
         }
         else{
-          console.log("Registration unsuccessful" + res.Errors[0])
+          this.resetForm(form);
+          console.log("error"+res);
+          console.log("Registration unsuccessful" + res.Errors)
         }
       }
-    )
+    );
   }
 
 }

@@ -1,5 +1,5 @@
 <h3>Sign up panel</h3>
-<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)" class="form">
+<form #signUpForm="ngForm" (submit)="signUpForm.valid && onSubmit(form)" class="form">
     <div  class="form-group">
          <input required #name="ngModel" [(ngModel)]="userService.userModel.name"
                 name="name" type="text" class="form-control" placeholder="Name"/>
